@@ -128,32 +128,17 @@ const movieData1 = {
     Website: "N/A",
     Response: "True"
   };
-
-//   const movArr = [];
-//   movArr.push(movieData1,movieData2,movieData3);
-
+  
 export default function Movie(){
     return(
         <div>
             <h1 className="Test">This is a page about Movies</h1>
             <p style={{fontStyle:"italic"}}>Just Checking Movies, so cool amirite?</p>
             <div className="OuterBox">
-                
+                <MovieCard {...movieData1}/>
+                <MovieCard {...movieData2}/>
+                <MovieCard {...movieData3}/>
             </div>
         </div>
     );
 }
-
-// export default function Movie(){
-//     return(
-//         <div>
-//             <h1 className="Test">This is a page about Movies</h1>
-//             <p style={{fontStyle:"italic"}}>Just Checking Movies, so cool amirite?</p>
-//             <div className="OuterBox">
-//                 <MovieCard {...movieData1}/>
-//                 <MovieCard {...movieData2}/>
-//                 <MovieCard {...movieData3}/>
-//             </div>
-//         </div>
-//     );
-// }

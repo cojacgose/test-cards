@@ -2,7 +2,7 @@ export default function MovieCard(props){
     const obj = props;
     return(
         <div className="OuterBox">
-           <div heght={{}}>Pic</div>
+           <img alt="NO PIC AVAILABLE" src={obj.Poster}></img>
            <div className = "InfoBox">
                 <div>{obj.Title}</div>
                 <div>{obj.Runtime}</div>
