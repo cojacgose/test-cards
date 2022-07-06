@@ -37,13 +37,9 @@
   }
 }
 
-.Test {
-  size:100px;
-}
-
 .OuterBox{
   display:flex;
   align-items:center;
-  border: 10px solid blue;
-  width:15vw;
+  border: 5px solid blue;
+  padding: 20px;
 }
