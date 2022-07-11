@@ -1,4 +1,5 @@
 import MovieCard from "./MovieCard";
+import { useState } from "react";
 
 const movieData1 = {
     Title: "The Mavengers",
@@ -17,20 +18,7 @@ const movieData1 = {
     Awards: "Nominated for 1 Oscar. 38 wins & 80 nominations total",
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-    Ratings: [
-      {
-        Source: "Internet Movie Database",
-        Value: "8.0/10"
-      },
-      {
-        Source: "Rotten Tomatoes",
-        Value: "91%"
-      },
-      {
-        Source: "Metacritic",
-        Value: "69/100"
-      }
-    ],
+    
     Metascore: "69",
     imdbRating: "8.0",
     imdbVotes: "1,339,955",
@@ -60,20 +48,7 @@ const movieData1 = {
     Awards: "Nominated for 1 Oscar. 38 wins & 80 nominations total",
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-    Ratings: [
-      {
-        Source: "Internet Movie Database",
-        Value: "8.0/10"
-      },
-      {
-        Source: "Rotten Tomatoes",
-        Value: "91%"
-      },
-      {
-        Source: "Metacritic",
-        Value: "69/100"
-      }
-    ],
+    
     Metascore: "69",
     imdbRating: "8.0",
     imdbVotes: "1,339,955",
@@ -103,20 +78,7 @@ const movieData1 = {
     Awards: "Nominated for 1 Oscar. 38 wins & 80 nominations total",
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-    Ratings: [
-      {
-        Source: "Internet Movie Database",
-        Value: "8.0/10"
-      },
-      {
-        Source: "Rotten Tomatoes",
-        Value: "91%"
-      },
-      {
-        Source: "Metacritic",
-        Value: "69/100"
-      }
-    ],
+
     Metascore: "69",
     imdbRating: "8.0",
     imdbVotes: "1,339,955",
@@ -128,17 +90,31 @@ const movieData1 = {
     Website: "N/A",
     Response: "True"
   };
-  
-export default function Movie(){
+
+
+// export default function Movie(){
+//   const [movies, setMovies] = useState(movieArr);
+//     return(
+//         <div>
+//             <h1 className="Test">This is a page about Movies</h1>
+//             <p style={{fontStyle:"italic"}}>Just Checking Movies, so cool amirite?</p>
+//             <div className="OuterBox">
+//                 {movies.length > 0 ? (
+//                   movies.map((movie)=>(<MovieCard{...movie}/>))
+//                 ) : (
+//                   <div>There Are No Movies Ya Goof</div>
+//                 )}
+//             </div>
+//         </div>
+//     );
+// }
+
+
+let movieArr = [];
+movieArr.push(movieData1,movieData2,movieData3);
+export default function Movie(props){
+  const [movies,setMovies] = useState(movieArr);
     return(
-        <div>
-            <h1 className="Test">This is a page about Movies</h1>
-            <p style={{fontStyle:"italic"}}>Just Checking Movies, so cool amirite?</p>
-            <div className="OuterBox">
-                <MovieCard {...movieData1}/>
-                <MovieCard {...movieData2}/>
-                <MovieCard {...movieData3}/>
-            </div>
-        </div>
-    );
+      movies.map(movie=>(<MovieCard {...movie}/>))
+    )
 }
